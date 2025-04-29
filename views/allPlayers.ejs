@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('navbar', {expertise: expertise}) %>
+    <div>
+        <% locals.players.forEach((player) => { %>
+            <li value="<%= player.name %>"><%= player.name %></li>
+        <% }) %>
+    </div>
+</body>
+</html>
