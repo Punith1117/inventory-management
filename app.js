@@ -2,7 +2,7 @@ const express = require('express')
 require('dotenv').config()
 const path = require("node:path");
 
-const categoriesRouter = require('./routes/categoriesRouter')
+const expertiseRouter = require('./routes/expertiseRouter')
 
 const app = express()
 app.set("views", path.join(__dirname, "views"));
@@ -11,10 +11,10 @@ const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 const PORT = process.env.PORT
 
-app.use('/categories', categoriesRouter)
+app.use('/expertise', expertiseRouter)
 
 app.get('/', (req, res) => {
-    res.redirect('/categories')
+    res.redirect('/expertise')
 })
 
 app.listen(PORT, () => {
