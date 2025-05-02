@@ -10,7 +10,17 @@ async function getAllPlayers() {
     return rows
 }
 
+async function addNewPlayer(name) {
+    await pool.query('INSERT INTO players (name) VALUES ($1)', [name])
+}
+
+async function addNewExpertise(expertise) {
+    await pool.query('INSERT INTO expertise (expert_in) VALUES ($1)', [expertise])
+}
+
 module.exports = {
     getAllExpertise,
-    getAllPlayers
+    getAllPlayers,
+    addNewPlayer, 
+    addNewExpertise
 }
