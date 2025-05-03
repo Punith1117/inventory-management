@@ -1,5 +1,6 @@
 <nav>
     <a href="/create">Create new player / expertise</a>
+    <a href="/destroy">Destroy player / expertise</a>
     <select name="expertise" id="expertise">
         <% locals.expertise.forEach((expertise) => { %>
             <option value="<%= expertise.expert_in %>"><%= expertise.expert_in %></option>
