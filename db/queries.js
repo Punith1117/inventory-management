@@ -39,6 +39,19 @@ async function getPlayersExpertIn(expert_in) {
     return rows
 }
 
+async function getPlayersNotExpertIn(expert_in) {
+    const queryArray = [
+        'SELECT expert_in, name FROM expertise_player AS ep',
+        'JOIN expertise AS e ON e.expert_in_id = ep.expert_in_id',
+        'JOIN players AS p ON p.player_id = ep.player_id',
+        'WHERE e.expert_in != ($1)',
+        ';'
+    ]
+    const query = queryArray.join(' ')
+    const { rows } = await pool.query(query, [expert_in])
+    return rows
+}
+
 module.exports = {
     getAllExpertise,
     getAllPlayers,
