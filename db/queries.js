@@ -41,10 +41,12 @@ async function getPlayersExpertIn(expert_in) {
 
 async function getPlayersNotExpertIn(expert_in) {
     const queryArray = [
-        'SELECT expert_in, name FROM expertise_player AS ep',
+        'SELECT name FROM players',
+        'WHERE name NOT IN',
+        '(SELECT name FROM expertise_player AS ep',
         'JOIN expertise AS e ON e.expert_in_id = ep.expert_in_id',
         'JOIN players AS p ON p.player_id = ep.player_id',
-        'WHERE e.expert_in != ($1)',
+        'WHERE e.expert_in = ($1))',
         ';'
     ]
     const query = queryArray.join(' ')
@@ -59,5 +61,6 @@ module.exports = {
     addNewExpertise,
     destroyPlayer,
     destroyExpertise,
-    getPlayersExpertIn
+    getPlayersExpertIn,
+    getPlayersNotExpertIn
 }
