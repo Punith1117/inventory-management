@@ -10,7 +10,8 @@ expertiseRouter.get('/', async (req, res) => {
     } else {
         const allExpertise = await db.getAllExpertise()
         const players = await db.getPlayersExpertIn(req.query.expert_in)
-        res.render('playersExpert_in', {expertise: req.query.expert_in, players: players, allExpertise: allExpertise})
+        const playersToAdd = await db.getPlayersNotExpertIn(req.query.expert_in)
+        res.render('playersExpert_in', {expertise: req.query.expert_in, players: players, allExpertise: allExpertise, playersToAdd: playersToAdd})
     }
 })
 

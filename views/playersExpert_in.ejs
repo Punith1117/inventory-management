@@ -14,5 +14,13 @@
             <li value="<%= player.name %>"><%= player.name %></li>
         <% }) %>
     </div>
+    <form action="/expertise/add-player" method="POST">
+        <select name="player-to-add" id="player-to-add">
+            <% locals.playersToAdd.forEach(player => { %>
+                <option value="<%= player.name %>"><%= player.name %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Add player</button>
+    </form>
 </body>
 </html>
