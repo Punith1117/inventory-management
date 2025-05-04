@@ -12,7 +12,9 @@
     <div>
         <ul>
             <% locals.players.forEach((player) => { %>
-                <li value="<%= player.name %>"><%= player.name %></li>
+                <form action="/relation/<%= locals.expert_in_id %>/remove/<%= player.player_id %>" method="POST">
+                    <li value="<%= player.player_id %>"><%= player.name %> <button type="submit">Remove</button></li>
+                </form>
             <% }) %>
         </ul>
     </div>
