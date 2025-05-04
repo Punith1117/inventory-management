@@ -54,6 +54,10 @@ async function getPlayersNotExpertIn(expert_in_id) {
     return rows
 }
 
+async function addPlayerToExpertise(expert_in_id, player_id) {
+    await pool.query('INSERT INTO expertise_player (expert_in_id, player_id) VALUES ($1, $2)', [expert_in_id, player_id])
+}
+
 module.exports = {
     getAllExpertise,
     getAllPlayers,
@@ -62,5 +66,6 @@ module.exports = {
     destroyPlayer,
     destroyExpertise,
     getPlayersExpertIn,
-    getPlayersNotExpertIn
+    getPlayersNotExpertIn,
+    addPlayerToExpertise
 }

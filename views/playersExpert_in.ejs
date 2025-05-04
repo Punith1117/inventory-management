@@ -14,8 +14,8 @@
             <li value="<%= player.name %>"><%= player.name %></li>
         <% }) %>
     </div>
-    <form action="/expertise/add-player" method="POST">
-        <select name="player-to-add" id="player-to-add">
+    <form action="/relation/<%= locals.expert_in_id %>/add" method="POST">
+        <select name="player_id" id="player_id">
             <% locals.playersToAdd.forEach(player => { %>
                 <option value="<%= player.player_id %>"><%= player.name %></option>
             <% }) %>
