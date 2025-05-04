@@ -58,6 +58,10 @@ async function addPlayerToExpertise(expert_in_id, player_id) {
     await pool.query('INSERT INTO expertise_player (expert_in_id, player_id) VALUES ($1, $2)', [expert_in_id, player_id])
 }
 
+async function removePlayerFromExpertise(expert_in_id, player_id) {
+    await pool.query('DELETE FROM expertise_player WHERE expert_in_id = ($1) AND player_id = ($2);', [expert_in_id, player_id])
+}
+
 module.exports = {
     getAllExpertise,
     getAllPlayers,
@@ -67,5 +71,6 @@ module.exports = {
     destroyExpertise,
     getPlayersExpertIn,
     getPlayersNotExpertIn,
-    addPlayerToExpertise
+    addPlayerToExpertise,
+    removePlayerFromExpertise
 }
