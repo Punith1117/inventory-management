@@ -1,11 +1,11 @@
 <nav>
     <a href="/create">Create new player / expertise</a>
     <a href="/destroy">Destroy player / expertise</a>
-    <form action="/expertise" >
-        <select name="expert_in" id="expert_in">
+    <form action="/expertise" method="GET">
+        <select name="expert_in_id" id="expert_in_id">
             <option value="All">All</option>
             <% locals.expertise.forEach((expertise) => { %>
-                <option value="<%= expertise.expert_in %>"><%= expertise.expert_in %></option>
+                <option value="<%= expertise.expert_in_id %>"><%= expertise.expert_in %></option>
             <% }) %>
         </select>
         <button type="submit">Choose</button>
