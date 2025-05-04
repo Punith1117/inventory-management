@@ -1,5 +1,15 @@
 const pool = require('./pool')
 
+async function getExpertise(expert_in_id) {
+    const { rows } = await pool.query('SELECT * FROM expertise WHERE expert_in_id = ($1);', [expert_in_id])
+    return rows
+}
+
+async function getPlayer(player_id) {
+    const { rows } = await pool.query('SELECT * FROM players WHERE player_id = ($1);', [player_id])
+    return rows
+}
+
 async function getAllExpertise() {
     const { rows } = await pool.query('SELECT * FROM expertise')
     return rows
@@ -63,6 +73,8 @@ async function removePlayerFromExpertise(expert_in_id, player_id) {
 }
 
 module.exports = {
+    getExpertise,
+    getPlayer,
     getAllExpertise,
     getAllPlayers,
     addNewPlayer, 
