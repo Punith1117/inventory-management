@@ -10,9 +10,11 @@
     <%- include('navbar', {expertise: allExpertise}) %>
     <h2><%= expertise %></h2>
     <div>
-        <% locals.players.forEach((player) => { %>
-            <li value="<%= player.name %>"><%= player.name %></li>
-        <% }) %>
+        <ul>
+            <% locals.players.forEach((player) => { %>
+                <li value="<%= player.name %>"><%= player.name %></li>
+            <% }) %>
+        </ul>
     </div>
     <form action="/relation/<%= locals.expert_in_id %>/add" method="POST">
         <select name="player_id" id="player_id">
