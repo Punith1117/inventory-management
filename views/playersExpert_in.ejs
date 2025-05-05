@@ -11,7 +11,7 @@
     <%- include('navbar', {expertise: allExpertise}) %>
     <h2><%= expertise %></h2>
     <div>
-        <ul>
+        <ul class="players-list">
             <% locals.players.forEach((player) => { %>
                 <form action="/relation/<%= locals.expert_in_id %>/remove/<%= player.player_id %>" method="POST">
                     <li value="<%= player.player_id %>"><%= player.name %> <button type="submit">Remove</button></li>
