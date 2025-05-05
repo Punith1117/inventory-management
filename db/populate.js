@@ -81,10 +81,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: process.env.EXTERNAL_DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    } // to be removed when deploying it on Render. It is required only when using external database url
+    connectionString: process.env.INTERNAL_DATABASE_URL,
   });
   await client.connect();
   await client.query(SQL);
