@@ -10,12 +10,13 @@
     <%- include('header') %>
     <%- include('navbar', {expertise: expertise}) %>
     <h2>All</h2>
-    <div>
+    <main>
         <ul class="players-list">
             <% locals.players.forEach((player) => { %>
                 <li value="<%= player.name %>"><%= player.name %></li>
             <% }) %>
         </ul>
-    </div>
+    </main>
+
 </body>
 </html>

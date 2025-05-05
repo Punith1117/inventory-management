@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="/styles/players-list.css">
     <title>Players expert in</title>
 </head>
 <body>
     <%- include('header') %>
     <%- include('navbar', {expertise: allExpertise}) %>
     <h2><%= expertise %></h2>
-    <div>
+    <main>
         <ul class="players-list">
             <% locals.players.forEach((player) => { %>
                 <form action="/relation/<%= locals.expert_in_id %>/remove/<%= player.player_id %>" method="POST">
@@ -18,14 +19,14 @@
                 </form>
             <% }) %>
         </ul>
-    </div>
-    <form action="/relation/<%= locals.expert_in_id %>/add" method="POST">
-        <select name="player_id" id="player_id">
-            <% locals.playersToAdd.forEach(player => { %>
-                <option value="<%= player.player_id %>"><%= player.name %></option>
-            <% }) %>
-        </select>
-        <button type="submit">Add player</button>
-    </form>
+        <form action="/relation/<%= locals.expert_in_id %>/add" method="POST">
+            <select name="player_id" id="player_id">
+                <% locals.playersToAdd.forEach(player => { %>
+                    <option value="<%= player.player_id %>"><%= player.name %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Add player</button>
+        </form>
+    </main>
 </body>
 </html>

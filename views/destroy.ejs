@@ -8,22 +8,24 @@
 </head>
 <body>
     <%- include('header') %>
-    <form action="/destroy" method="POST">
-        <select name="player" id="player">
-            <% locals.players.forEach((player) => { %>
-                <option value="<%= player.name %>"><%= player.name %></option>
-            <% }) %>
-        </select>
-        <button type="submit">Destroy Player</button>
-    </form>
-    <form action="/destroy" method="POST">
-        <select name="expert_in" id="expert_in">
-            <% locals.expertise.forEach((expertise) => { %>
-                <option value="<%= expertise.expert_in %>"><%= expertise.expert_in %></option>
-            <% }) %>
-        </select>
-        <button type="submit">Destroy Expertise</button>
-    </form>
-    <a href="/expertise">back</a>
+    <main>
+        <form action="/destroy" method="POST">
+            <select name="player" id="player">
+                <% locals.players.forEach((player) => { %>
+                    <option value="<%= player.name %>"><%= player.name %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Destroy Player</button>
+        </form>
+        <form action="/destroy" method="POST">
+            <select name="expert_in" id="expert_in">
+                <% locals.expertise.forEach((expertise) => { %>
+                    <option value="<%= expertise.expert_in %>"><%= expertise.expert_in %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Destroy Expertise</button>
+        </form>
+        <a href="/expertise">back</a>
+    </main>
 </body>
 </html>

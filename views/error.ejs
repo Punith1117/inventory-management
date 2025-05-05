@@ -7,11 +7,13 @@
 </head>
 <body>
     <h1>Oh! What have you done :(</h1>
-    <ul>
-        <% locals.errors.forEach(error => { %>
-            <li><%= error.msg %></li>
-        <% }) %>
-    </ul>
-    <a href="/expertise">Back</a>
+    <main>
+        <ul>
+            <% locals.errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <a href="/expertise">Back</a>
+    </main>
 </body>
 </html>
