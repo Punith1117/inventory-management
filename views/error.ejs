@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
     <title>Error</title>
 </head>
-<body>
+<body style="background-image: linear-gradient(rgb(255, 113, 113), rgb(255, 216, 216)); background-repeat: no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: max(1.5vw, 1.5rem);">
     <h1>Oh! What have you done :(</h1>
-    <main>
+    <main style="background-image: none;">
         <ul>
             <% locals.errors.forEach(error => { %>
                 <li><%= error.msg %></li>
             <% }) %>
         </ul>
-        <a href="/expertise">Back</a>
+        <a href="/expertise" class="back">Back</a>
     </main>
 </body>
 </html>

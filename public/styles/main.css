@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+button:hover, select:hover {
+    cursor: pointer;
+    filter: brightness(0.7);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: linear-gradient(antiquewhite, #3b6e3d);
+    gap: 10px;
+}
+
+.players-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    li {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 5px;
+        color: white;
+        font-size: max(1.3rem, 1.5vw);
+        background-color: #3d8d40;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.651);
+        button {
+            background-color: white;
+            font-size: max(1rem, 1vw);
+            border: none;
+            color: rgb(216, 62, 62);
+            padding: 2px;
+        }
+    }
+}
+
+.add-relation-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: max(1.1rem, 1.2vw);
+    gap: 10px;
+    
+    button, select, option {
+        font-size: max(1.1rem, 1.2vw);
+        background-color: #b6ecb7;
+        padding: 3px;
+        border: none;
+    }
+}
+
+.create-form, .destroy-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    select, option, input, button{
+        background-color: rgb(208, 233, 202);
+        font-size: max(1.3rem, 1.5vw);
+    }
+}
+
+.back {
+    font-size: max(1.3rem, 1.5vw);
+    background-color: rgb(16, 109, 126);
+    color: white;
+    padding: 3px;
+    text-decoration-line: none;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
+}
